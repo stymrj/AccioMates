@@ -84,7 +84,7 @@ router.post('/signin',async (req,res)=>{
         httpOnly: true,
         secure: true,         
         sameSite: 'none',
-        maxAge:24*60*60*100}
+        maxAge:24*60*60*1000}
     ).status(200).json({msg:'User Logged IN', data: {firstName,lastName, email, role,phoneNumber}})
 
     } catch (error) {
