@@ -79,7 +79,13 @@ router.post('/signin',async (req,res)=>{
     const token = jwt.sign({id:foundUser._id},process.env.JWT_SECRET)
     const { firstName,lastName, email, role,phoneNumber } = foundUser
 
-    res.cookie('loginToken',token,{maxAge:24*60*60*100}).status(200).json({msg:'User Logged IN', data: {firstName,lastName, email, role,phoneNumber}})
+    res.cookie(
+      'loginToken',token,{ 
+        httpOnly: true,
+        secure: true,         
+        sameSite: 'none',
+        maxAge:24*60*60*100}
+    ).status(200).json({msg:'User Logged IN', data: {firstName,lastName, email, role,phoneNumber}})
 
     } catch (error) {
         res.status(400).json({error:error.message})
