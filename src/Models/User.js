@@ -53,8 +53,33 @@ const userSchema = new mongoose.Schema({
                 throw new Error('Please use a valid Phone Number')
             }
         }
+    },
+    bio : {
+        type : String,
+        minLength : 10,
+        maxLength : 500
+    },
+    postCount : {
+        type : Number,
+        default : 0
+    },
+
+    followers : [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "user"
+    }],
+
+    following : [{
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "user"
+    }],
+
+    profilePicture : {
+        type : String,
+        default : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKKOdmJz8Z2pDtYgFgR2u9spABvNNPKYYtGw&s'
     }
-})
+
+}, { timestamps : true} )
 
 const User = mongoose.model('user',userSchema)
 

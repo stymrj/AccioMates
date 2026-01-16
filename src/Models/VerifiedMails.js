@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
 
-const verifiedMailSchema = new mongoose({
-    mail : {
+const verifiedMailSchema = new mongoose.Schema({
+    email : {
         type : String,
         required : true,
         validate : (mail)=>{
@@ -15,7 +15,7 @@ const verifiedMailSchema = new mongoose({
 }, { timestamps : true})
 
 
-const verifiedMails = mongoose.model('VerifiedMail', verifiedMailSchema)
+const verifiedMails = mongoose.model('verifiedMail', verifiedMailSchema)
 
 module.exports = {
     verifiedMails
