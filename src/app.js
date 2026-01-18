@@ -12,13 +12,14 @@ const { Server } = require('socket.io')
 
 app.use(cors({
   origin: [
-    '*',
     "http://localhost:5173",
-    "https://acciomates.vercel.app/" 
+    "https://acciomates.vercel.app"
   ],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
-}))
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 
 
 
