@@ -54,6 +54,10 @@ const userSchema = new mongoose.Schema({
             }
         }
     },
+    post : [{
+        
+    }],
+
     bio : {
         type : String,
         minLength : 10,

@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 const { verifiedMails } = require("../Models/VerifiedMails");
 const { OTP } = require("../Models/OTP");
-const { sendOTP, verifyOTP } = require("../Controllers/OTP");
 
 const transport = nodemailer.createTransport({
   service: "gmail",
@@ -114,7 +113,7 @@ const sendOTP = async (req, res) => {
     </div>
 
     <div class="content">
-      <h2>Hello 👋</h2>
+      <h2>Dear Mate!</h2>
       <p>
         Thank you for registering with <strong>AccioMates</strong>.<br />
         Please use the following OTP to complete your email verification.
@@ -125,7 +124,7 @@ const sendOTP = async (req, res) => {
       </div>
 
       <p>
-        This OTP is valid for the next <strong>10 minutes</strong>.
+        This OTP is valid for the next <strong>2 minutes</strong>.
         Please do not share this code with anyone for security reasons.
       </p>
 
