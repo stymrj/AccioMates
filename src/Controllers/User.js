@@ -30,7 +30,7 @@ const updateProfile = async(req,res)=>{
             firstName,lastName,username
         })
 
-        res.status(200).json({msg:'done', updatedProfile})
+        res.status(200).json({msg:'Profile Updated!', updatedProfile})
         
     } catch (error) {
         res.status(400).json({error: error.message})
