@@ -43,7 +43,7 @@ const editPost = async(req,res)=>{
         const foundPost =await Post.findById(id)
 
         if(!foundPost){
-            throw new Error("Post Not Found...")
+            throw new Error('Post Not Found!')
         }
 
         if(foundPost.author.toSting() !== req.user._id.toSting()){

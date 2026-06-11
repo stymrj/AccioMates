@@ -17,7 +17,6 @@ const postSchema = new mongoose.Schema({
     }],
 
 //comments
-
     comments : [{
         user: {
             type : mongoose.Schema.Types.ObjectId,

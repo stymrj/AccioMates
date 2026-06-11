@@ -4,10 +4,10 @@ const { User } = require("../Models/User")
 const getUserData = async(req,res)=>{
     try {
         const foundUser =await User.findById(req.user._id)
-
         if(!foundUser){
-            throw new Error('User Not Foundd')
+            throw new Error('User Not Found!')
         }
+
         res.status(200).json({success: true, foundUser})
 
     } catch (error) {
