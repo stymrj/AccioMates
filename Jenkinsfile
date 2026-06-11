@@ -20,7 +20,7 @@ pipeline {
                 docker run -d \
                 --name acciomates \
                 -p 8085:8085 \
-                --env-file /opt/AccioMates/.env \
+                --env-file /opt/acciomates/.env \
                 acciomates
                 '''
             }
